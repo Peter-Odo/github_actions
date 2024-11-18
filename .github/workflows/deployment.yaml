@@ -1,9 +1,8 @@
-name: Continuous Integration
-
- on:
+name: "Continuous Integration"
+on:
    push:
      branches: ["master"]
- jobs:
+jobs:
     build: 
         runs-on: ubuntu-latest
         strategy:
