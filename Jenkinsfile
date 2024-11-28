@@ -9,17 +9,17 @@ pipeline {
         }
           stage('Lint the project') {
             steps {
-                bat 'npm lint'
+                bat 'npm run lint'
             }
         }
           stage('Generate a production build') {
             steps {
-                bat 'npm build'
+                bat 'npm run build'
             }
         }
           stage('Run tests') {
             steps {
-                bat 'npm test'
+                bat 'npm run test'
             }
         }
           stage('Deploy to GCP') {
