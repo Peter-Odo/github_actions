@@ -2,14 +2,34 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Install Dependencies') {
             steps {
-                echo 'Hello World'
+                bat 'npm install'
             }
         }
-          stage('Checkout') {
+          stage('Lint the project') {
             steps {
-                echo 'Checkout'
+                bat 'npm lint'
+            }
+        }
+          stage('Generate a production build') {
+            steps {
+                bat 'npm build'
+            }
+        }
+          stage('Generate a production build') {
+            steps {
+                bat 'npm test'
+            }
+        }
+          stage('Deploy to GCP') {
+            steps {
+                echo 'Deploying to GCP.......'
+            }
+        }
+          stage('Application Deployed') {
+            steps {
+                echo 'Deployment Successful!!!!!'
             }
         }
         
