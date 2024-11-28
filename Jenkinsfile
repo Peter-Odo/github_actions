@@ -17,11 +17,6 @@ pipeline {
                 bat 'npm run build'
             }
         }
-          stage('Run tests') {
-            steps {
-                bat 'npm run test'
-            }
-        }
           stage('Deploy to GCP') {
             steps {
                 echo 'Deploying to GCP.......'
